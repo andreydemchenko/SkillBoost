@@ -2,5 +2,26 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/AestheticDialogs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/AgeCalc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Badminton-Grouping-Helper" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BasketScorerApp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ChildrensCampApp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/CleanArchitectureNoteApp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/CubsAppFromGithub" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/CurrencyConverter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FirebaseNotifications" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Fishing" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/GapCalculator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/HikingFood" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Logbook" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MVVMShoppingList" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PI-HikingHelper" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RowerGame" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SimulatorSports" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/TestWorkApp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/children-camp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/shopping-android-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/spectrophotometry" vcs="Git" />
   </component>
 </project>
