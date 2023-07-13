@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/InitialFragment">
+
+    <fragment
+        android:id="@+id/InitialFragment"
+        android:name="com.dem.blazeball.fragments.InitialFragment"
+        tools:layout="@layout/fragment_initial" >
+        <action
+            android:id="@+id/action_InitialFragment_to_GameFragment"
+            app:destination="@id/GameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/GameFragment"
+        android:name="com.dem.blazeball.fragments.GameFragment"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_GameFragment_to_GameOverFragment"
+            app:destination="@id/GameOverFragment">
+            <argument
+                android:name="score"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/GameOverFragment"
+        android:name="com.dem.blazeball.fragments.GameOverFragment"
+        tools:layout="@layout/fragment_game_over" >
+        <argument
+            android:name="score"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+    <!-- Add actions to navigate between the fragments -->
+
+</navigation>
