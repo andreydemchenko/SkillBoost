@@ -187,6 +187,49 @@ Java_com_dem_spoyersoccer_MainActivity_passUrlToNative(JNIEnv *env, jobject cont
     env->ReleaseStringUTFChars(url, urlStr);
 }
 
+void logCookies(JNIEnv* env, const char* urlStr) {
+    // Get CookieManager class
+    jclass cookieManagerClass = env->FindClass("android/webkit/CookieManager");
+    if (cookieManagerClass == nullptr) {
+        LOGE("Failed to find CookieManager class");
+        return;
+    }
+
+    // Get getInstance method
+    jmethodID getInstanceMethod = env->GetStaticMethodID(cookieManagerClass, "getInstance", "()Landroid/webkit/CookieManager;");
+    if (getInstanceMethod == nullptr) {
+        LOGE("Failed to find getInstance method");
+        return;
+    }
+
+    // Call getInstance method
+    jobject cookieManager = env->CallStaticObjectMethod(cookieManagerClass, getInstanceMethod);
+    if (cookieManager == nullptr) {
+        LOGE("Failed to get CookieManager instance");
+        return;
+    }
+
+    // Get getCookie method
+    jmethodID getCookieMethod = env->GetMethodID(cookieManagerClass, "getCookie", "(Ljava/lang/String;)Ljava/lang/String;");
+    if (getCookieMethod == nullptr) {
+        LOGE("Failed to find getCookie method");
+        return;
+    }
+
+    // Call getCookie method
+    jstring urlJString = env->NewStringUTF(urlStr);
+    jstring cookiesJString = (jstring)env->CallObjectMethod(cookieManager, getCookieMethod, urlJString);
+
+    // Log cookies
+    const char* cookiesStr = env->GetStringUTFChars(cookiesJString, nullptr);
+    LOGD("Cookies for URL %s: %s", urlStr, cookiesStr);
+
+    // Release local references
+    env->ReleaseStringUTFChars(cookiesJString, cookiesStr);
+    env->DeleteLocalRef(urlJString);
+    env->DeleteLocalRef(cookiesJString);
+}
+
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_dem_spoyersoccer_utils_CustomWebViewClient_onPageFinishedNative(JNIEnv *env, jobject instance, jobject view, jstring url) {
